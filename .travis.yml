@@ -1,14 +1,15 @@
 language: java
 jdk:
-- oraclejdk8
+  - oraclejdk8
 before_install:
-- wget http://services.gradle.org/distributions/gradle-4.6-bin.zip
-- unzip -qq gradle-4.6-bin.zip
-- export GRADLE_HOME=$PWD/gradle-4.6
-- export PATH=$GRADLE_HOME/bin:$PATH
+  - wget http://services.gradle.org/distributions/gradle-4.6-bin.zip
+  - unzip -qq gradle-4.6-bin.zip
+  - export GRADLE_HOME=$PWD/gradle-4.6
+  - export PATH=$GRADLE_HOME/bin:$PATH
 before_cache:
-- rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-- rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
 cache:
   directories:
   - "$HOME/.gradle/caches/"
@@ -19,7 +20,7 @@ deploy:
   provider: heroku
   api_key:
     secure: ADolEuGCsddrdCSS1yn26m5NTPprgruNaKcjScTqOOIYHlkhOY4OpdZUe3v/djKuvAkfWk/6w//7NTF/UsgXufkl3BhW1t2/SMUeAVFyiWTea/A+9LckfmBzy3ZT/bL4oSkFfhrHnjmbJ5+o/jw8jSn+Fin8CduHUM4MAnLYLU2fgw/aYHVFgSr203XfWJKMbg+anwvvJW5X1YTpmvlJfql/NT7Ku+o+uR55SHw3z8JLj0bzlm8RVcuSetLS++ojiWMutCX1whfRgwIICjGbOw7yOw9eyrmYL87DtDe+EsZzRLR/FnD7I/TDcV3MMA+Uom0OTdgT0IJQq4N6C0I1iwlv4nut3zj3EglWS9VeYzhAEO3+I+vGanbuSuM0s62faPlBEQdGQXnCKvvXGcDlIHzMJ7youyraxmKFUR9j//Q1cETqEnjPRl18p43fT9TF1/fbOF7rT5LUoOxf4Tx3JSlkTPDxCW+qOjzdluBiihZdjAXMXRuUUzcBGHdH9jrDXCmzzKv3rqpDi6lDnBSX3v3RXNq/cIlWFlp25LEsOQwfAbZyGMQme/u+MZApRSKL5Se6j3UxWg5p8g6w5/C6oXmKI53CEhr529eHFoUdg6OR+7lNI0zYJp5D9lUms0s9DEA+E3KJ3bT9lQ6x+3QPWNuRGFTTdJfU85tsWLiwSNQ=
- app: ttt-web-app
+  app: ttt-web-app
   on:
     repo: klkelley/tictactoe-app
     branch: master
